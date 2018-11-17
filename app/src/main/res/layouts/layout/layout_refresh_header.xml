@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:id="@+id/ll_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/dimen_10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="让购物更便捷"
+            android:textColor="#999999"
+            android:textSize="@dimen/dimen_12dp" />
+
+        <TextView
+            android:id="@+id/tv_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5dp"
+            android:text="下拉刷新"
+            android:textColor="#999999"
+            android:textSize="@dimen/dimen_10dp" />
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/iv_refresh"
+        android:layout_width="35dp"
+        android:layout_height="48dp"
+        android:layout_toLeftOf="@id/ll_text"
+        android:scaleX="0"
+        android:scaleY="0" />
+
+    <ImageView
+        android:id="@+id/iv_refresh_box"
+        android:layout_width="12dp"
+        android:layout_height="10dp"
+        android:layout_toLeftOf="@id/ll_text"
+        android:scaleX="0"
+        android:scaleY="0" />
+</RelativeLayout>

@@ -1,0 +1,47 @@
+apply plugin: 'com.android.library'
+android {
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 获取日志
+        def LOG_STATUS = config.LOG_STATUS
+        // 日志中
+        buildConfigField("Boolean", "LOG", LOG_STATUS)
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation deps.support.app_compat
+    api deps.okgo
+    api deps.fastJson
+    api deps.BaseRecyclerViewAdapterHelper
+    // 下拉刷新 mavenCentral()
+    api deps.smartRefreshLayout
+    api  deps.smartRefreshHeader //没有使用特殊Header，可以不加这行
+    api project(':model')
+    // 透明状态栏
+    api "com.gyf.barlibrary:barlibrary:$v_sdk.statusBar"
+
+    // 65535
+    api "com.android.support:multidex:$v_sdk.multidex"
+    //日志
+    api "com.orhanobut:logger:$v_sdk.logger"
+    //多状态布局
+    api "com.github.czy1121:loadinglayout:$v_sdk.loadinglayout"
+}

@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        applicationId "com.example.administrator.testmvp"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        // 获取网络环境
+        def NET_ENVIRONMENT = config.NET_ENVIRONMENT
+
+        // 获得网络状态
+        switch (NET_ENVIRONMENT){
+            case "RELEASE": // 正式环境
+                buildConfigField("String", "URL", "\"https://guess.sodasoccer.com.cn\"")
+                break
+            case "TEST":    // 测试环境
+                buildConfigField("String", "URL", "\"https://guess.sodasoccer.com.cn\"")
+                break
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets{
+        main{
+            jniLibs.srcDir 'libs'
+            res.srcDirs = [
+                    'src/main/res/layouts/activity',
+                    'src/main/res/layouts/adapter',
+                    'src/main/res/layouts/fragment',
+                    'src/main/res/layouts/layout',
+                    'src/main/res/layouts',
+                    'src/main/res-night',
+                    'src/main/res-red',
+                    'src/main/res'
+            ]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    api deps.support.app_compat
+    api deps.support.recyclerview
+    api project(':baselib')
+}

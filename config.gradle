@@ -1,0 +1,38 @@
+// ##########################常量##########################
+def config = [:]
+config.LOG_STATUS="true"        // 日志是否开启
+config.NET_ENVIRONMENT="RELEASE"   // 网络状态 RELEASE(正式) TEST(测试)
+ext.config=config
+
+// ##########################依赖库##########################
+def v_sdk = [:]
+// sdk 版本
+v_sdk.versionCode = 1                 // 版本号
+v_sdk.versionName = "1.0"             // 版本名称
+v_sdk.compileSdkVersion = 27          // api
+v_sdk.minSdkVersion = 16              // 最小兼容版本
+v_sdk.targetSdkVersion = 27           // 目标版本
+v_sdk.junit = "4.12"                  // junit
+v_sdk.runner = "1.0.2"                // runner
+v_sdk.espressoCore = "3.0.2"          // espressoCore
+v_sdk.constraintLayout = "1.0.2"      // 约束布局
+
+// 开源库版本
+v_sdk.hotfix = '1.3.4'                // 热修复
+v_sdk.supportLibraryVersion = '27.0.1'// support库
+v_sdk.multidex = '1.0.1'              // multidex
+v_sdk.commonAdapter = '2.9.22'        // 通用adapter
+v_sdk.fastjson = '1.2.46'             // fastjson
+v_sdk.rxpermissions = '0.9.5@aar'
+v_sdk.rxjava = '2.0.0'                // rx
+v_sdk.rxandroid = '2.0.2'
+v_sdk.statusBar = '2.3.0'             // 透明状态栏
+v_sdk.lottie = '2.0.0-beta4'          // lottie ae 动画效果
+v_sdk.smartRefresh = '1.1.0-alpha-5'  // 下拉刷新
+v_sdk.skinSupport = '3.1.0-beta1'     // 换肤
+v_sdk.glide = '3.7.0'                 // 图片加载框架
+v_sdk.photoView = '2.0.0'             // 缩放大图
+v_sdk.okgo = '3.0.4'                  // 网络请求框架
+v_sdk.eventbus = '3.1.1'              // eventbus
+v_sdk.zbar = '1.9.8'                  // 二维码
+ext.v_sdk=v_sdk

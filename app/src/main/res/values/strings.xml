@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">App-zd-shop</string>
+
+
+    <string name="str_http_time_out">网络异常</string>
+    <string name="str_http_error">服务器异常</string>
+</resources>

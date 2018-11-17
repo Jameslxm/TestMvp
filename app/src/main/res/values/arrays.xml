@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 首页tab -->
+    <array name="main_tab">
+        <item>主页</item>
+        <item>分类</item>
+        <item></item>
+        <item>购物车</item>
+        <item>我的</item>
+    </array>
+
+    <!-- 首页tab动画 -->
+    <array name="main_tab_json">
+        <item>lottie_1.json</item>
+        <item>lottie_4.json</item>
+        <item>lottie_3.json</item>
+        <item>lottie_2.json</item>
+        <item>lottie_5.json</item>
+    </array>
+</resources>
